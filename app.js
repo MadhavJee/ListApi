@@ -1,22 +1,23 @@
+
 import express from "express";
-//import productroutes from "./routes/productroutes";
+import productRouter from "./routes/product.routes.js";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
-
 const app = express();
+
+
 dotenv.config();
 connectDB();
 
-//app.use("/api/posts", postRouter);
 
 app.use(express.json());
 
 // BASE ROUTE
 app.get("/", (req, res) => {
-  res.send("List API is running");
+  res.send("User Management API is running");
 });
 
+app.use("/api/products",productRouter);
 // USER ROUTES
-//app.use("/api/users", userRouter);
 
 export default app;
