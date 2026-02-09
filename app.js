@@ -3,8 +3,8 @@ import express from "express";
 import productRouter from "./routes/product.routes.js";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
-const app = express();
 
+const app = express();
 
 dotenv.config();
 connectDB();
